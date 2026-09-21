@@ -56,7 +56,7 @@ class LinkedList():
     if self.head==None:
      return
     cN=self.head
-    while cN.next is None:
+    while cN.next is not None:
       cN=cN.next
     cN.next=None
     self.size-=1
