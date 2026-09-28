@@ -14,7 +14,9 @@ class Queue:
       return
     self._a[self._c]=data
     self._c+=1
-  def range(self):
+  def rear(self):
+    if self._c==0:
+      return "no elements"
     return self._a[self._c-1]
   def dequeue(self):
     if self._c==0:
@@ -27,7 +29,10 @@ class Queue:
     temp=self._a[self._front]
     self._a=ar
     return temp
-
+  def is_empty(self):
+    return self._c==0
+  def is_full(self):
+    return self._c==len(self._a)
     
     
 
@@ -38,5 +43,8 @@ que.enqueue(20)
 que.enqueue(30)
 que.enqueue(40)
 que.dequeue()
-print(que.peek())
-print(que.rare())
+print("Front:",que.peek())
+print("Rear:",que.rear())
+print(que.is_empty())
+print(que.is_full())
+print(que.rear())
